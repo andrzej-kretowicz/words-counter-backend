@@ -6,12 +6,17 @@ docker-compose up
 
 2. Copy `.env.example` to `.env`
 
-3. Create database:
+3. Install composer dependencies
+```shell
+docker-compose exec app composer install
+```
+
+4. Create database:
 ```shell
 docker-compose exec app php bin/console doctrine:database:create
 ```
 
-4. Run migrations:
+5. Run migrations:
 ```shell
 docker-compose exec app php bin/console d:m:m
 ```
